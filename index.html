@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="./static/bootstrap.min.css" rel="stylesheet">
+        <link href="./static/style.css" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1 class="h1">SIU NASA Control Panel</h1><br>
+            <table class="big_table">
+                <tr>
+                    <td><h4>Drive Controls</h4></td>
+                    <td><h4>Auger Controls</h4></td>
+                  	<td><h4>Tilt Controls</h4></td>
+                  	<td><h4>Sent Commands</h4></td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Forward: W</li>
+                            <li>Backward: S</li>
+                            <li>Left: A</li>
+                            <li>Right: D</li>
+                            <li>Stop: E</li>
+                            <li>Speed: <input id="speed" type="number" min="0" max="127" value="30"></li>
+                        </ul>
+                        
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Clockwise: T</li>
+                            <li>Counter Clockwise: G</li>
+                            <li>Forward: Y</li>
+                            <li>Backward: H</li>
+                            <li>Stop Spin: B</li>
+                            <li>Stop Movement: N</li>
+                        </ul>
+                  </td>
+                  	<td>
+                      <ul>
+                            <li>Tilt Body Forward: I</li>
+                            <li>Tilt Body Backward: K</li>
+                            <li>Tilt Auger Forward: O</li>
+                            <li>Tilt Auger Backward: L</li>
+                            <li>Stop Body: ,</li>
+                            <li>Stop Auger: .</li>
+                        </ul>
+                  	</td>
+                  	<td>
+                      <div id="table_container">
+                            <table id="commands">
+                                <tr>
+                                    <th>##</th>
+                                    <th>Type</th>
+                                    <th>Command</th>
+                                    <th>Status</th>
+                                </tr>
+                            </table>
+                        </div>
+                  </td>
+              </tr>
+            </table>
+            <td><h4>Video Stream <button class="btn btn-secondary" id="camera_btn">Toggle camera index:</button>
+                        <input id="cameraID" type="number" min="0" max="5" value="0"><input id="cameraID2" type="number" min="0" max="5" value="2"></</h4></td>
+            <br><br>
+            <span id="video"></span>
+            <br>
+            <div>
+            </div>
+        </div>
+    </body>
+    <script src="./static/jquery-3.6.3.min.js"></script>
+    <script src="./static/robotlogic.js"></script>
+    <script src="./static/camera.js"></script>
+
+</html>
