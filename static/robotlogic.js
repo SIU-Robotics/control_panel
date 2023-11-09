@@ -1,5 +1,18 @@
 document.addEventListener("keydown", keyDownHandler, false);
 
+$("#safety_switch").click(() => {
+    if(disallowInput == false){
+        disallowInput = true;
+    }
+    else{
+        disallowInput = false;
+    }
+});
+
+function disallowSafetySwitch(){
+    disallowInput = true;
+}
+
 const keys = { w:87, e:69, t:84, y:89, i:73, o:79, a:65, s:83, d:68, g:71, h:72, k:75, l:76, b:66, n:78, comma:188, period:190, five:53, six:54, nine:57, zero:48 };
 
 let rightPressed = false;
@@ -11,8 +24,12 @@ let auger = 0;
 let tilt = 0;
 let auto = 0;
 let count = 0;
+let disallowInput = true;
 
 function keyDownHandler(event) {
+    if(disallowInput == true) {
+      return;
+    }
     switch(event.keyCode) {
         case keys.d:
             send_command("movement", "right");

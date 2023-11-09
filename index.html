@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id="wrapper">
-            <h1 class="h1">SIU NASA Control Panel</h1><br>
+            <h1 class="h1">SIU NASA Control Panel</h1><button class="btn btn-secondary" id="safety_switch">Toggle Input</button><br>
             <table class="big_table">
                 <tr>
                     <td><h4>Drive Controls</h4></td>
@@ -24,7 +24,7 @@
                             <li>Left: A</li>
                             <li>Right: D</li>
                             <li>Stop: E</li>
-                            <li>Speed: <input id="speed" type="number" min="0" max="127" value="30"></li>
+                            <li>Speed: <input id="speed" onmousedown="disallowSafetySwitch()" type="number" min="0" max="127" value="30"></li>
                         </ul>
                         
                     </td>
