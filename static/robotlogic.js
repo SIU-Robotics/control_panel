@@ -1,16 +1,19 @@
 document.addEventListener("keydown", keyDownHandler, false);
 
 $("#safety_switch").click(() => {
-    if(disallowInput == false){
-        disallowInput = true;
+    if(allowInput == false){
+        allowInput = true;
+        document.getElementById("input_status").innerHTML = allowInput;
     }
     else{
-        disallowInput = false;
+        allowInput = false;
+        document.getElementById("input_status").innerHTML = allowInput;
     }
 });
 
 function disallowSafetySwitch(){
-    disallowInput = true;
+    allowInput = false;
+    document.getElementById("input_status").innerHTML = allowInput;
 }
 
 const keys = { w:87, e:69, t:84, y:89, i:73, o:79, a:65, s:83, d:68, g:71, h:72, k:75, l:76, b:66, n:78, comma:188, period:190, five:53, six:54, nine:57, zero:48 };
@@ -24,10 +27,12 @@ let auger = 0;
 let tilt = 0;
 let auto = 0;
 let count = 0;
-let disallowInput = true;
+let allowInput = false;
+
+document.getElementById("input_status").innerHTML = allowInput;
 
 function keyDownHandler(event) {
-    if(disallowInput == true) {
+    if(allowInput == false) {
       return;
     }
     switch(event.keyCode) {
