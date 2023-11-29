@@ -20,6 +20,9 @@ table h4 {
 ul {
     height: 100%;
 }
+#input_status {
+    padding-left: 10px;
+}
 #table_container {
     height: 200px; 
     overflow: auto;
